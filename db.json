@@ -1,0 +1,34 @@
+{
+  "notes": [
+    {
+      "content": "First note",
+      "date": "2021-03-21T17:30:13.061Z",
+      "important": true,
+      "id": 1
+    },
+    {
+      "content": "Second",
+      "date": "2021-03-21T17:30:19.003Z",
+      "important": true,
+      "id": 2
+    },
+    {
+      "content": "Third",
+      "date": "2021-03-21T17:32:31.676Z",
+      "important": false,
+      "id": 3
+    },
+    {
+      "content": "Another one",
+      "date": "2021-03-21T17:32:37.929Z",
+      "important": true,
+      "id": 4
+    },
+    {
+      "content": "add new note...",
+      "date": "2021-03-22T06:39:11.169Z",
+      "important": false,
+      "id": 5
+    }
+  ]
+}

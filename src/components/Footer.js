@@ -1,3 +1,5 @@
+import React from "react";
+
 const Footer = () => {
   const footerStyle = {
     color: "green",
@@ -7,9 +9,7 @@ const Footer = () => {
   };
   return (
     <div style={footerStyle}>
-      <em>
-        Note app, by Llewellyn Dsouza - part of the FullStackOpen.com
-      </em>
+      <em>Note app, by Llewellyn Dsouza - part of the FullStackOpen.com</em>
     </div>
   );
 };

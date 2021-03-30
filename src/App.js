@@ -5,6 +5,8 @@ import Notification from "./components/Notification";
 import Footer from "./components/Footer";
 import LoginForm from "./components/LoginForm";
 import loginService from "./services/login";
+import Togglable from "./components/Togglable";
+import NoteForm from "./components/NoteForm";
 
 const App = () => {
   const [notes, setNotes] = useState([]);
@@ -61,14 +63,7 @@ const App = () => {
     }
   }, []);
 
-  const addNote = (e) => {
-    e.preventDefault();
-    const noteObject = {
-      content: newNote,
-      date: new Date().toISOString(),
-      important: Math.random() < 0.5,
-    };
-
+  const addNote = (noteObject) => {
     noteService
       .create(noteObject)
       .then((returnedNote) => {
@@ -79,10 +74,13 @@ const App = () => {
     setNewNote("");
   };
 
-  const handleNoteChange = (e) => {
-    setNewNote(e.target.value);
-  };
+  const noteForm = () => (
+    <Togglable buttonLabel="New Note">
+      <NoteForm createNote={addNote} />
+    </Togglable>
+  );
 
+  // needs updating
   const toggleImportanceOf = (id) => {
     const note = notes.find((note) => note.id === id);
     const changedNote = { ...note, important: !note.important };
@@ -126,17 +124,6 @@ const App = () => {
       </div>
     );
   };
-
-  const noteForm = () => (
-    <form onSubmit={addNote}>
-      <input
-        value={newNote}
-        onChange={handleNoteChange}
-        placeholder="add new note..."
-      />
-      <button type="submit">Save</button>
-    </form>
-  );
 
   return (
     <div>
